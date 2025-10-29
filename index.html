@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pemantau Kualitas Udara Real-Time</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="header">
+        <h1><i class="fas fa-cloud-sun"></i> Pemantau Kualitas Udara</h1>
+        <p>Monitor real-time suhu, kelembaban, asap, dan partikel debu</p>
+      </div>
+
+      <div class="row justify-content-center" id="data-container">
+        <div class="col-md-6 col-lg-4">
+          <div class="card data-card">
+            <div class="card-header">
+              <i class="fas fa-thermometer-half"></i> Suhu
+            </div>
+            <div class="card-body">
+              <i class="fas fa-thermometer-half icon"></i>
+              <div class="value" id="suhu">--</div>
+              <div class="unit">°C</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card data-card">
+            <div class="card-header">
+              <i class="fas fa-tint"></i> Kelembaban
+            </div>
+            <div class="card-body">
+              <i class="fas fa-tint icon"></i>
+              <div class="value" id="kelembaban">--</div>
+              <div class="unit">%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card data-card">
+            <div class="card-header">
+              <i class="fas fa-smog"></i> Kadar Asap
+            </div>
+            <div class="card-body">
+              <i class="fas fa-smog icon"></i>
+              <div class="value" id="kadarAsap">--</div>
+              <div class="unit">ppm</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-8">
+          <div class="card data-card dust-card">
+            <div class="card-header">
+              <i class="fas fa-dust"></i> Partikel Debu
+            </div>
+            <div class="card-body">
+              <div class="dust-item">
+                <i class="fas fa-microscope icon" style="color: #ff6b6b"></i>
+                <div class="value" id="pm25">--</div>
+                <div class="unit">PM2.5 µg/m³</div>
+              </div>
+              <div class="dust-item">
+                <i class="fas fa-microscope icon" style="color: #ff6b6b"></i>
+                <div class="value" id="pm10">--</div>
+                <div class="unit">PM10 µg/m³</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card data-card">
+            <div class="card-header">
+              <i class="fas fa-chart-line"></i> Status Keseluruhan
+            </div>
+            <div class="card-body text-center">
+              <span id="status" class="status-badge status-baik">Baik</span>
+              <p class="mt-3" id="statusDesc">Kualitas udara aman.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timestamp" id="timestamp">Terakhir update: --</div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
